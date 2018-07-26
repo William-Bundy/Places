@@ -8,7 +8,24 @@
 
 import UIKit
 
-class PlacesTableViewController: UITableViewController {
+protocol PlacesTableDelegate: class
+{
+	func locationSelected(_ place: Place)
+}
+
+class PlacesTableViewController: UITableViewController, PlaceModelConsumer
+{
+	weak var delegate:PlacesTableDelegate?
+
+	var controller:PlaceController!
+	func setController(_ c: PlaceController) {
+		controller = c
+	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let place = controller?.places[indexPath.row] else {return}
+		delegate?.locationSelected(place)
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +46,26 @@ class PlacesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return controller?.places.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath)
 
-        // Configure the cell...
+		cell.textLabel?.text = controller?.places[indexPath.row].name
 
         return cell
     }
-    */
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		tableView.reloadData()
+	}
 
     /*
     // Override to support conditional editing of the table view.

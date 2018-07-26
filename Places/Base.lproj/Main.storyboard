@@ -18,35 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-fu-LCL">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="RLc-C6-JZ9" kind="embed" id="4Bt-qV-y4a"/>
-                                </connections>
-                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-FX-l54">
+                                <rect key="frame" x="16" y="189" width="343" height="168"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t77-a3-IsL">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude: From -90 to 90" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsG-qF-TeR">
+                                        <rect key="frame" x="0.0" y="46" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude: From -180 to 180" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPI-ri-RzQ">
+                                        <rect key="frame" x="0.0" y="92" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSK-rN-HPJ">
+                                        <rect key="frame" x="0.0" y="138" width="343" height="30"/>
+                                        <state key="normal" title="Save Place"/>
+                                        <connections>
+                                            <action selector="savePlace:" destination="0F7-QA-mDG" eventType="touchUpInside" id="eSh-T9-rMM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HPI-ri-RzQ" firstAttribute="leading" secondItem="GRa-FX-l54" secondAttribute="leading" id="A6o-tB-vsd"/>
+                                    <constraint firstItem="t77-a3-IsL" firstAttribute="leading" secondItem="GRa-FX-l54" secondAttribute="leading" id="Qdu-Yz-K4O"/>
+                                    <constraint firstItem="GsG-qF-TeR" firstAttribute="leading" secondItem="GRa-FX-l54" secondAttribute="leading" id="cIo-Ix-oSS"/>
+                                    <constraint firstItem="WSK-rN-HPJ" firstAttribute="leading" secondItem="GRa-FX-l54" secondAttribute="leading" id="nk4-Ug-Hu3"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GRa-FX-l54" firstAttribute="leading" secondItem="QmN-JY-cmv" secondAttribute="leading" constant="16" id="C2S-wg-b3A"/>
+                            <constraint firstItem="GRa-FX-l54" firstAttribute="top" secondItem="QmN-JY-cmv" secondAttribute="top" constant="169" id="JQx-Mh-dRv"/>
+                            <constraint firstItem="QmN-JY-cmv" firstAttribute="trailing" secondItem="GRa-FX-l54" secondAttribute="trailing" constant="16" id="wxm-j8-PFC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QmN-JY-cmv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create Place" image="Plus" id="Rcg-4y-Yxk"/>
+                    <connections>
+                        <outlet property="latitudeField" destination="GsG-qF-TeR" id="wJo-7m-crM"/>
+                        <outlet property="longitudeField" destination="HPI-ri-RzQ" id="oce-cu-UYw"/>
+                        <outlet property="nameField" destination="t77-a3-IsL" id="XDz-0H-4v3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeF-yv-JbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="381.60000000000002" y="233.43328335832086"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="Sf8-a8-Qag">
-            <objects>
-                <viewControllerPlaceholder id="RLc-C6-JZ9" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WGd-dD-hiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="951" y="122"/>
-        </scene>
-        <!--Storyboard Reference-->
+        <!--PlacesTable-->
         <scene sceneID="unB-fB-KBo">
             <objects>
-                <viewControllerPlaceholder id="cGa-Ut-cvF" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PlacesTable" id="cGa-Ut-cvF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhd-ZN-ovt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1049" y="-301"/>
@@ -106,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1081" y="-579"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Places Tab Bar Controller-->
         <scene sceneID="xhc-OM-TBS">
             <objects>
-                <tabBarController id="phi-ME-v2T" sceneMemberID="viewController">
+                <tabBarController id="phi-ME-v2T" customClass="PlacesTabBarController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhT-Zr-uFY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
