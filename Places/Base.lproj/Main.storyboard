@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="phi-ME-v2T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Place-->
+        <scene sceneID="RNA-g0-OEB">
+            <objects>
+                <viewController id="0F7-QA-mDG" customClass="NewPlaceViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0li-Mw-ZD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-fu-LCL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="RLc-C6-JZ9" kind="embed" id="4Bt-qV-y4a"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QmN-JY-cmv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create Place" image="Plus" id="Rcg-4y-Yxk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeF-yv-JbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="381.60000000000002" y="233.43328335832086"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="Sf8-a8-Qag">
+            <objects>
+                <viewControllerPlaceholder id="RLc-C6-JZ9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGd-dD-hiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="122"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="unB-fB-KBo">
+            <objects>
+                <viewControllerPlaceholder id="cGa-Ut-cvF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhd-ZN-ovt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="-301"/>
+        </scene>
+        <!--Places-->
+        <scene sceneID="XmB-m2-ozu">
+            <objects>
+                <viewController id="TGg-Fi-fdf" customClass="VisitedPlacesViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sGV-an-4fT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90l-iR-JQu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="235"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="235" id="WQo-RN-qdW"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="fWP-Mq-BAs" kind="embed" identifier="EmbedMapView" id="Sph-EX-Q91"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIA-DM-0Lb">
+                                <rect key="frame" x="0.0" y="263" width="375" height="355"/>
+                                <connections>
+                                    <segue destination="cGa-Ut-cvF" kind="embed" id="Lac-vs-fMQ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="90l-iR-JQu" firstAttribute="trailing" secondItem="kc2-f1-8k3" secondAttribute="trailing" id="8eU-pO-gbF"/>
+                            <constraint firstItem="xIA-DM-0Lb" firstAttribute="top" secondItem="90l-iR-JQu" secondAttribute="bottom" constant="8" id="9qE-gy-UUL"/>
+                            <constraint firstItem="xIA-DM-0Lb" firstAttribute="top" secondItem="90l-iR-JQu" secondAttribute="bottom" constant="8" id="NKl-sp-N8A"/>
+                            <constraint firstItem="90l-iR-JQu" firstAttribute="top" secondItem="kc2-f1-8k3" secondAttribute="top" id="SVi-Uh-X7x"/>
+                            <constraint firstItem="xIA-DM-0Lb" firstAttribute="top" secondItem="90l-iR-JQu" secondAttribute="bottom" constant="8" id="VVQ-Wg-x0M"/>
+                            <constraint firstItem="xIA-DM-0Lb" firstAttribute="leading" secondItem="kc2-f1-8k3" secondAttribute="leading" id="cgn-8G-Pyl"/>
+                            <constraint firstItem="90l-iR-JQu" firstAttribute="trailing" secondItem="kc2-f1-8k3" secondAttribute="trailing" id="dO6-NP-Gbx"/>
+                            <constraint firstItem="90l-iR-JQu" firstAttribute="leading" secondItem="kc2-f1-8k3" secondAttribute="leading" id="gJb-aZ-r5S"/>
+                            <constraint firstItem="xIA-DM-0Lb" firstAttribute="trailing" secondItem="kc2-f1-8k3" secondAttribute="trailing" id="mrf-QM-9ig"/>
+                            <constraint firstItem="90l-iR-JQu" firstAttribute="leading" secondItem="kc2-f1-8k3" secondAttribute="leading" id="rUt-9s-f1P"/>
+                            <constraint firstItem="90l-iR-JQu" firstAttribute="top" secondItem="kc2-f1-8k3" secondAttribute="top" id="tyU-FG-amM"/>
+                            <constraint firstItem="xIA-DM-0Lb" firstAttribute="bottom" secondItem="kc2-f1-8k3" secondAttribute="bottom" id="yhg-xj-N1f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kc2-f1-8k3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Places" image="Globe" id="eH5-uh-69U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWz-6u-5xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="381.60000000000002" y="-430.43478260869568"/>
+        </scene>
+        <!--MapView-->
+        <scene sceneID="G4T-Hv-5ez">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MapView.storyboard" storyboardName="MapView" id="fWP-Mq-BAs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Qx-ao-1J5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="-579"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xhc-OM-TBS">
+            <objects>
+                <tabBarController id="phi-ME-v2T" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhT-Zr-uFY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TGg-Fi-fdf" kind="relationship" relationship="viewControllers" id="Whq-20-d8u"/>
+                        <segue destination="0F7-QA-mDG" kind="relationship" relationship="viewControllers" id="0mV-eH-OXJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caN-yw-3Fg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-570" y="-99"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Globe" width="23" height="23"/>
+        <image name="Plus" width="21" height="21"/>
+    </resources>
+</document>
